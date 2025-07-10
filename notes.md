@@ -1,0 +1,35 @@
+                    PROJECT OVERVIEW
+- You’re creating a full-stack AI “personal assistant” web app.
+- On the frontend, you use Next.js with React (styled via Tailwind CSS) to give users a chat interface and dashboard where they can manage and talk to their AI assistants. 
+- On the backend, you leverage Convex, a serverless platform, to store user data, session info, and chat history in real time. 
+- Finally, you integrate Eden AI as the AI engine that processes user messages and returns intelligent responses 
+edenai.co
+
+                    INSTRUCTIONS
+
+- once you run npm dev run
+- open ui.shadcn.com
+    popular library and is intergrated 
+    select docs > installation> next.js
+    https://ui.shadcn.com/docs/installation/next
+    we use tailwind 3.4.1 version 
+    
+    initialise this by copying the command (npx shadcn@latest init)
+    into a new terminal and proceed > yes > select style > New York > Base color? > Neutral 
+    == install successfully
+
+    there will be a new folder called lib and another folder called components.json (configuration related to shadcn )
+    the tailwind config file will have updated colors.
+    if you want to update colors you can replace the lines inside the tailwind config  file
+    whenever you want to use a shadcn component first you need to install the npx line into terminal and run it
+
+- add dark theme component from shadcn 
+    to do this we need to again copy command from shadcn component dark theme > paste it into terminal > run > then create provider.tsx in app folder> install react(ES7+ React/Redux/React-Native snippe extension) > install tailwind (Tailwind CSS IntelliSense) which helps do coding faster. 
+
+    this provider.tsx will help us render on client side 
+    and layout.tsx on server side. 
+
+    when you set the provider.tsx to dark mode and run the server it will automatically change the font color to white   
+
+
+
