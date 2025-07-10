@@ -5,7 +5,9 @@
 - Finally, you integrate Eden AI as the AI engine that processes user messages and returns intelligent responses 
 edenai.co
 
-                    INSTRUCTIONS
+                    CHAPTER 1 - PROJECT SETUP
+                **CREATE NEXT.JS PROJECT**
+                **INSTALL UI COMPONENT LIBRARY (SHADCN)**
 
 - once you run npm dev run
 - open ui.shadcn.com
@@ -23,6 +25,9 @@ edenai.co
     if you want to update colors you can replace the lines inside the tailwind config  file
     whenever you want to use a shadcn component first you need to install the npx line into terminal and run it
 
+                    CHAPTER 2 (DARK THEME/ DARK MODE)
+                **ADD DARK THEME USING SHADCN**
+                
 - add dark theme component from shadcn 
     to do this we need to again copy command from shadcn component dark theme > paste it into terminal > run > then create provider.tsx in app folder> install react(ES7+ React/Redux/React-Native snippe extension) > install tailwind (Tailwind CSS IntelliSense) which helps do coding faster. 
 
@@ -31,5 +36,11 @@ edenai.co
 
     when you set the provider.tsx to dark mode and run the server it will automatically change the font color to white   
 
+    we also add <html suppressHydrationWarning={true}>
+    -- to tell React if you notice a mismatch under here between the server rendered HTML and what youd render on the client please log that warning.
+
+                    STEP 3 - AUTHENTICATION
+                **GOOGLE/GMAIL AUTHENTICATION**
+                **USER BASIC INFO (NAME, EMAIL, PROFILE PIC)**
 
 
