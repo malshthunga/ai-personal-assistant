@@ -10,6 +10,8 @@ edenai.co
                 **INSTALL UI COMPONENT LIBRARY (SHADCN)**
 
 - once you run npm dev run
+    you're starting Next.js development server, which by default listens on http://localhost:3001. The window that pops up is simply your systems default web browser loading that URL so you can preview and interact with your app as you develop it. 
+
 - open ui.shadcn.com
     popular library and is intergrated 
     select docs > installation> next.js
@@ -27,7 +29,7 @@ edenai.co
 
                     CHAPTER 2 (DARK THEME/ DARK MODE)
                 **ADD DARK THEME USING SHADCN**
-                
+
 - add dark theme component from shadcn 
     to do this we need to again copy command from shadcn component dark theme > paste it into terminal > run > then create provider.tsx in app folder> install react(ES7+ React/Redux/React-Native snippe extension) > install tailwind (Tailwind CSS IntelliSense) which helps do coding faster. 
 
@@ -43,4 +45,22 @@ edenai.co
                 **GOOGLE/GMAIL AUTHENTICATION**
                 **USER BASIC INFO (NAME, EMAIL, PROFILE PIC)**
 
+![alt text](image.png)
 
+- to add google authentication , use : React OAuth2 | Google
+    log into google cloud > google auth platform > clients > copy client id and paste into provider.tsx.
+- create .env.local file
+    NEXT_PUBLIC_GOOGLE_CLIENT_ID api : when we use this on the client side you need to start the variable with next_public and mention key name. 
+
+    to use this we use process.env inside provider.tsx
+- if you want to make http://localhost:3001/sign-in:
+    create sign-in.tsx file
+
+    create page.tsx inside auth> sign in folder > page.tsx
+    go to logo placeholder and copy svg of preferred logo and copy svg into logo.svg new file inside public folder. 
+
+    ![alt text](image-1.png)
+
+    https://react-oauth.vercel.app/ > GOOGLE AUTHENTICATION > IMPLICIT FLOW 
+
+    - tokenResponse.access_token -- is an api
