@@ -3,21 +3,36 @@ import {Button} from '@/components/ui/button'
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import Image from 'next/image';
-import React from 'react'
+import React, {useContext} from 'react';
 import  { GetAuthUserData } from "@/services/GlobalAPI";
+import { api } from "@/convex/_generated/api";
+import { useMutation } from "convex/react";
+
 
 function SignIn() {
-    
-const googleLogin = useGoogleLogin({
-  onSuccess: async (tokenResponse) => {
-    if (typeof window !== undefined) {
-        localStorage.setItem('user_token', tokenResponse.access_token);
-    }
-    const user=GetAuthUserData(tokenResponse.access_token);
-    console.log(user);
-  },
-  onError: errorResponse => console.log(errorResponse),
-});
+
+    const CreateUser = useMutation(api.user.CreateUser);
+    const [user, setUser] = React.useState<any>(null);
+
+    const googleLogin = useGoogleLogin({
+        onSuccess: async (tokenResponse) => {
+        if (typeof window !== undefined) {
+            localStorage.setItem('user_token', tokenResponse.access_token);
+        }
+        const user= await GetAuthUserData(tokenResponse.access_token);
+
+        // save user info
+        const result= await CreateUser({
+            name:user?.name,
+            email:user?.email,
+            picture:user?.picture,
+
+        });
+        console.log("--",result);
+        setUser(result);
+    },
+    onError: errorResponse => console.log(errorResponse),
+    });
 
     return (
         <div className='flex items-center flex-col justify-center h-screen' >

@@ -77,3 +77,25 @@ edenai.co
     == creates convex folder in github and also add convex deployment key and convex url into .env.local file
 - edit provider.tsx --> create client component for convex provider 
     https://docs.convex.dev/quickstart/nextjs
+
+-         if(user?.length==0)
+        {
+        //If not then only ->Add User
+        const data={
+            name:args.name,
+            email:args.email,
+            picture:args.picture,
+            credits:5000
+        }
+        const result=await ctx.db.insert('users',data); // users table and pass as data
+        return data
+        }
+
+
+                        CHAPTER 5 (AI ASSISTANTS TO PICK)
+                    **NEW SCREEN TO DISPLAY LIST OF AI ASSISTANTS**
+                    **SAVE USER SELECTED AI ASSISRANT**
+                    **MAGIC UI ANIMATION LIBRARY**
+                    
+![alt text](image-2.png)
+
