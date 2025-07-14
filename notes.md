@@ -103,3 +103,8 @@ edenai.co
 
 - if you sign in again, a new record will not be recorded it will only be verified. 
 - this info can be found under console in inspect on browser.
+
+-inside react we create " Context"  - which is context for application 
+    - context folder > authcontext.tsx
+    -make sure to import from react **
+    
