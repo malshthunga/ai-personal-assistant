@@ -75,3 +75,5 @@ edenai.co
     > npx convex dev
     > choose existing  project - ai personal assistant 
     == creates convex folder in github and also add convex deployment key and convex url into .env.local file
+- edit provider.tsx --> create client component for convex provider 
+    https://docs.convex.dev/quickstart/nextjs
