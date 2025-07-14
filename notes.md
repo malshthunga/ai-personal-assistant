@@ -64,3 +64,14 @@ edenai.co
     https://react-oauth.vercel.app/ > GOOGLE AUTHENTICATION > IMPLICIT FLOW 
 
     - tokenResponse.access_token -- is an api
+
+                    CHAPTER 4 (BACKEND DB SETUP)
+        **Setup BackEnd DB with Convex DB**
+        **Create user table**
+        **Save User Data to Table**
+
+- create convex account
+    > npm i convex
+    > npx convex dev
+    > choose existing  project - ai personal assistant 
+    == creates convex folder in github and also add convex deployment key and convex url into .env.local file
