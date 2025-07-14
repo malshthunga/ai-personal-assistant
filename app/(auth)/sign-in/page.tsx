@@ -20,12 +20,12 @@ function SignIn() {
             localStorage.setItem('user_token', tokenResponse.access_token);
         }
         const user= await GetAuthUserData(tokenResponse.access_token);
-
+        console.log(user);
         // save user info
         const result= await CreateUser({
             name:user?.name,
             email:user?.email,
-            picture:user?.picture,
+            picture:user.picture,
 
         });
         console.log("--",result);

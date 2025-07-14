@@ -99,3 +99,7 @@ edenai.co
                     
 ![alt text](image-2.png)
 
+- so when you setup backend nd then sign in to your account a new record is added to the table , where the id is unique and creation Time is recorded. 
+
+- if you sign in again, a new record will not be recorded it will only be verified. 
+- this info can be found under console in inspect on browser.
