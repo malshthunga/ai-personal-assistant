@@ -1,5 +1,6 @@
 //server side to add sco, html
 import React from 'react'
+import Provider from '../provider';
 
 function WorkspaceLayout({
   children,
@@ -7,7 +8,12 @@ function WorkspaceLayout({
   children: React.ReactNode;
 }>) {
     return (
-        <div>{children}</div>
+        <div>
+            <Provider>
+                {children}
+            </Provider>
+
+        </div>
     )
 }
 

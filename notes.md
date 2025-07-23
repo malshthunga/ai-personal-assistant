@@ -107,4 +107,9 @@ edenai.co
 -inside react we create " Context"  - which is context for application 
     - context folder > authcontext.tsx
     -make sure to import from react **
-    
+
+- can view page using /ai-assistant
+    - create header - we want to create logo and personal profile 
+    ![alt text](image-3.png)
+- we need to write a query to get user information 
+    convex > user.ts file
