@@ -1,64 +1,55 @@
-" use client"
-import React, {useEffect, useContext} from 'react'
+"use client"
+import React, { useContext, useEffect, useState } from 'react'
 import Header from './_components/Header';
 import { GetAuthUserData } from '@/services/GlobalAPI';
-import { useRouter } from 'next/router';
-import { AuthContext } from "@/context/AuthContext";
+import { useRouter } from 'next/navigation';
 import { useConvex } from 'convex/react';
+import { AuthContext } from '@/context/AuthContext';
 import { api } from '@/convex/_generated/api';
-import { GetUser } from '@/convex/user';
 
-interface ProviderProps {
+function Provider({
+  children,
+}: Readonly<{
   children: React.ReactNode;
-}
-
-function Provider({ children }: ProviderProps){
-  const router = useRouter();
+}>) {
+  //define router to navigate user to sign in screen if token is invalid
+  const router=useRouter();
+  // define convex
   const convex=useConvex();
-  const { user, setUser } = useContext(AuthContext);
-  
-  useEffect(() => {
+  const {user, setUser}=useContext(AuthContext)
+  useEffect(()=>{
     CheckUseAuth();
-  }, []);
+  }, [])
 
-async function CheckUseAuth(){
-    const token = localStorage.getItem('user_token');
-    // Get New Access Token
-    //If we are not getting the user then navigate user to sign in screen 
-    if (!token) {
-      router.replace("/sign-in");
-      return;
-    }
-
-    const authUser = await GetAuthUserData(token);
-     //if token is available then face the data
+  const CheckUseAuth=async()=>{
+    const token=localStorage.getItem('user_token');
+    //Get New Access Token
+    const user= token && await GetAuthUserData(token);
+    // console.log(user); not needed anymore
     if(!user?.email)
     {
-      router.replace('/sign-in')
-      return ;
+      router.replace('/sign-in');
+      return;
     }
-    //Get User Info from Database
+        // Get User Info From Database
     try{
-      const dbUser =await convex.query(api.GetUser,{email:authUser.email});
+      const result=await convex.query(api.user.GetUser,{
+        email:user?.email
+      });
+      // once we get the result
+      console.log(result);
+      // save result inside the hoop which is defined above
+      setUser(result); // we are updatinng the auth context with the new info we are getting from the database. 
+    }catch(e)
+    {
 
-      if (!dbUser) {
-        router.replace("/sign-in")
-        return;
-      }
-
-      setUser(dbUser);
-    } catch (err) {
-      console.error("Convex query failed:", err);
-      router.replace("/sign-in")
     }
-}
-
-return (
-  <div>
-    <header />
-    {children}
-  </div>
-);
+  }
+  return (
+    <div>
+      <Header />
+      {children}</div>
+  )
 }
 
 export default Provider

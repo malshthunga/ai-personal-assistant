@@ -19,6 +19,7 @@ function SignIn() {
         localStorage.setItem('user_token', tokenResponse.access_token);
       }
       const user = await GetAuthUserData(tokenResponse.access_token);
+      // save user info
       const result = await CreateUser({
         name: user?.name,
         email: user?.email,
@@ -26,7 +27,8 @@ function SignIn() {
       });
 
       setUser(result);
-      router.replace('/ai-assistant')
+      router.replace('/ai-assistants')
+
     },
     onError: errorResponse => console.log(errorResponse),
   });

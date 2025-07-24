@@ -98,6 +98,25 @@ edenai.co
                     **MAGIC UI ANIMATION LIBRARY**
                     
 ![alt text](image-2.png)
+- we create a main folder where we keep all our application logic. 
+    - layout.tsx - server side
+        we can add SCO, html body tag
+    - provider.tsx - client side
+- since we dont have a new route we will create a new folder called AI - assistant 
+    page.tsx file with default template and named ai-assistants.
+    the base layout is the default workspace layout. 
+- can view page using /ai-assistant
+    - create header - we want to create logo and personal profile 
+    ![alt text](image-3.png)
+
+- we create header.tsx file inside components folder. 
+    - we also need to add the header inside the provider folder so that whatever renders through the layout then the header component is displayed in every page. 
+    - we need to get the updated session token and fetch user information from the database = provider.tsx > const checkUseAuth=()_=>{}
+        - first check if user has access token or not from authentication sign in page you can check if token is valid or not. 
+            " token && await"...
+
+        - if we are getting user data then token is valid - 
+        -if user token is not valid then navigate user to sign in screen 
 
 - so when you setup backend nd then sign in to your account a new record is added to the table , where the id is unique and creation Time is recorded. 
 
@@ -108,8 +127,5 @@ edenai.co
     - context folder > authcontext.tsx
     -make sure to import from react **
 
-- can view page using /ai-assistant
-    - create header - we want to create logo and personal profile 
-    ![alt text](image-3.png)
 - we need to write a query to get user information 
-    convex > user.ts file
+    convex > user.ts  > export constant get user=query()

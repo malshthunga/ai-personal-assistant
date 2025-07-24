@@ -3,6 +3,7 @@ import { v } from "convex/values";
 
 //create user convex function
 export const CreateUser= mutation({
+
     args:{
         name:v.string(),
         email:v.string(),
@@ -39,11 +40,12 @@ export const GetUser=query({
         email:v.string()
     },
     handler:async(ctx,args)=> {
-        const result=await ctx.db.query('users')
-            .filter(q=>q.eq(q.field('email'), args.email))
-            .collect();
+        const result=await ctx.db
+        .query("users")
+        .filter(q=>q.eq(q.field("email"), args.email))
+        .collect();
 
-        return result.length > 0 ? result[0] : null;
+        return result[0] ?? null;// we only want to get the first user 
 
-    }
-})
+    },
+});
