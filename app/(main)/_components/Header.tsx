@@ -6,15 +6,27 @@ import { AuthContext } from '@/context/AuthContext'
 function Header() {
   const {user}= useContext(AuthContext);
   return user && (
-    <div className='p-3 shadow-sm'> 
-      <Image src={'/logo.svg'} alt='logo'
-        width={40}
-        height={40}/>
+        <div
+      style={{
+        backgroundColor: 'hotpink',
+        padding: '16px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
+    ></div>
+    // <div className='p-3 shadow-sm flex justify-between items-center px-14'> 
+    //   <Image src={'/logo.svg'} alt='logo'
+    //     width={40}
+    //     height={40}/>
 
-      {user?.picture && <Image src={user?.picture} alt='logo'
-        width={40}
-        height={40}/>}
-    </div>
+      // {user?.picture && <Image src={user?.picture} alt='logo'
+      //   width={40}
+      //   height={40}
+      //   className='rounded-full'
+
+    //   // />}
+    // </div>
   )
 }
 

@@ -129,3 +129,6 @@ edenai.co
 
 - we need to write a query to get user information 
     convex > user.ts  > export constant get user=query()
+
+- next we need to add the rest of the information 
+    - show text images and add the button 

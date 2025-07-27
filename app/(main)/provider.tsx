@@ -47,6 +47,7 @@ function Provider({
   }
   return (
     <div>
+      {/* {header must go} */}
       <Header />
       {children}</div>
   )

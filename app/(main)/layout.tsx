@@ -1,7 +1,7 @@
 //server side to add sco, html
 import React from 'react'
 import Provider from '../provider'
-import Header from './_components/Header';
+
 
 function WorkspaceLayout({
   children,
@@ -12,6 +12,7 @@ function WorkspaceLayout({
 
     <div>
       <Provider>
+        {/* {header} */}
         {children}
       </Provider>
 </div>
