@@ -132,3 +132,21 @@ edenai.co
 
 - next we need to add the rest of the information 
     - show text images and add the button 
+
+- 1:40:01
+    - create new function userAiAssistants.tsx
+
+
+                    CHAPTER 6 (WORKSPACE LAYOUT)
+                **Workspace Scree Layout**
+                **Display Selected Assistant List**
+                **Assistant Settings(SideBar)**
+                **CHAT UI**
+
+![alt text](image-4.png)
+
+- also option to search for current assistants or add new assistant
+- middle section - chat
+- right section - add the selected assistant information along with the model and  instruction as well. 
+
+- we create a workspace folder>page.tsx>default template

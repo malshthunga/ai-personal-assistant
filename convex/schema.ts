@@ -8,5 +8,16 @@ export default defineSchema({
         picture:v.string(),
         credits :v.number(),
         orderId:v.optional(v.string())
-    })
+    }),
+    userAiAssistants:defineTable({
+        id:v.number(),
+        /*we are going to insert bulk statemenetss*/
+        name:v.string(),
+        title:v.string(),
+        image:v.string(),
+        instruction:v.string(),
+        userInstruction:v.string(),
+        sampleQuestions:v.array(v.string()),
+        uid:v.id("users"),
+    }),
 })
